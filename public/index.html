@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام مراقبة الاختبارات</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 3px solid transparent;
+            backdrop-filter: blur(10px);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .student-card {
+            border-color: #28a745;
+        }
+        
+        .student-card:hover {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+        }
+        
+        .professor-card {
+            border-color: #dc3545;
+        }
+        
+        .professor-card:hover {
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            color: white;
+        }
+        
+        .card-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+        
+        .card h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        
+        .card p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+        
+        .instructions {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+            text-align: right;
+        }
+        
+        .instructions h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .steps {
+            text-align: right;
+            line-height: 2;
+        }
+        
+        .step {
+            margin: 15px 0;
+            padding-right: 20px;
+            border-right: 3px solid #28a745;
+        }
+        
+        .connection-info {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            border: 2px solid #28a745;
+        }
+        
+        @media (max-width: 768px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            .header {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎓 نظام مراقبة الاختبارات عبر الإنترنت</h1>
+            <p class="subtitle">نظام متكامل لمشاركة ومشاهدة الشاشات خلال الاختبارات الإلكترونية</p>
+            
+            <div class="cards-container">
+                <a href="/student.html" class="card student-card">
+                    <div class="card-icon">👨‍🎓</div>
+                    <h2>طالب</h2>
+                    <p>مشاركة شاشتك مع المراقب خلال الاختبار</p>
+                </a>
+                
+                <a href="/professor.html" class="card professor-card">
+                    <div class="card-icon">👨‍🏫</div>
+                    <h2>مراقب</h2>
+                    <p>مشاهدة شاشات الطلاب والتحكم في الجلسة</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>سرعة عالية</h3>
+                <p>اتصال مباشر باستخدام WebRTC</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>آمن</h3>
+                <p>اتصال مشفر بين الأطراف</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🌐</div>
+                <h3>يعمل في كل مكان</h3>
+                <p>محلياً وعبر الإنترنت</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <h3>متجاوب</h3>
+                <p>يعمل على جميع الأجهزة</p>
+            </div>
+        </div>
+
+        <div class="connection-info">
+            <h3>🌐 معلومات الاتصال:</h3>
+            <p>✅ النظام يعمل عبر الإنترنت باستخدام تقنية WebRTC المتقدمة</p>
+            <p>✅ يدعم الاتصال عبر الشبكات المعقدة باستخدام TURN servers</p>
+            <p>✅ إعادة اتصال تلقائي في حالة انقطاع الشبكة</p>
+        </div>
+
+        <div class="instructions">
+            <h3>📋 تعليمات التشغيل:</h3>
+            <div class="steps">
+                <div class="step">1. الطالب: انقر على "طالب" وأدخل اسمك ثم انضم للغرفة</div>
+                <div class="step">2. الطالب: اضغط على "بدء مشاركة الشاشة" واختر الشاشة لمشاركتها</div>
+                <div class="step">3. المراقب: انقر على "مراقب" وأدخل اسمك ثم انضم للغرفة</div>
+                <div class="step">4. المراقب: ستظهر شاشات الطلاب تلقائياً عند بدء المشاركة</div>
+                <div class="step">5. في حالة وجود مشاكل في الاتصال، استخدم زر "إعادة المحاولة"</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
